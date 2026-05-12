@@ -1,12 +1,64 @@
-﻿<Window x:Class="eKreta.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:eKreta"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+﻿<Window
+    x:Class="eKreta.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:eKreta"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <ResourceDictionary Source="Resources/Listitem.xaml" />
+    </Window.Resources>
+    <DockPanel Background="CornflowerBlue">
+        <StackPanel Height="30" DockPanel.Dock="Top">
+            <TextBlock
+                FontWeight="ExtraBold"
+                Foreground="White"
+                Text="eKréta Adminisztrátor felület"
+                TextAlignment="Center" />
+        </StackPanel>
+        <StackPanel
+            Width="200"
+            Background="DeepSkyBlue"
+            DockPanel.Dock="Left">
+            <ListView>
+                <ListViewItem
+                    x:Name="diakMenu"
+                    Content="Diákok"
+                    MouseLeftButtonUp="diakMenu_MouseLeftButtonUp"
+                    Style="{StaticResource ResourceKey=ListItemStyle}" />
+                <ListViewItem
+                    x:Name="tanarMenu"
+                    Content="Tanárok"
+                    MouseLeftButtonUp="tanarMenu_MouseLeftButtonUp"
+                    Style="{StaticResource ResourceKey=ListItemStyle}" />
+                <ListViewItem
+                    x:Name="osztalyMenu"
+                    Content="Osztály"
+                    MouseLeftButtonUp="osztalyMenu_MouseLeftButtonUp"
+                    Style="{StaticResource ResourceKey=ListItemStyle}" />
+                <ListViewItem
+                    x:Name="termekMenu"
+                    Content="Termek"
+                    MouseLeftButtonUp="termekMenu_MouseLeftButtonUp"
+                    Style="{StaticResource ResourceKey=ListItemStyle}" />
+                <ListViewItem
+                    x:Name="felhasznaloMenu"
+                    Content="Felhasználó"
+                    MouseLeftButtonUp="felhasznaloMenu_MouseLeftButtonUp"
+                    Style="{StaticResource ResourceKey=ListItemStyle}" />
+                <ListViewItem
+                    x:Name="kilepesMenu"
+                    Background="Red"
+                    Content="Kilépés"
+                    Foreground="White"
+                    MouseLeftButtonUp="kilepesMenu_MouseLeftButtonUp"
+                    Style="{StaticResource ResourceKey=ListItemStyle}" />
+            </ListView>
+        </StackPanel>
+        <StackPanel x:Name="feladatPanel" DockPanel.Dock="Right" />
+    </DockPanel>
 </Window>
