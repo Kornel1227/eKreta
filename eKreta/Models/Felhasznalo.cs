@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +9,17 @@ namespace eKreta.Models
 {
     public class Felhasznalo
     {
+        [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string FelhasznaloNev { get; set; }
         public string TeljesNev { get; set; }
         public string Jelszo {  get; set; }
         public int Szerepkor { get; set; }
+
+        public Felhasznalo()
+        {
+        }
+
         public string SzerepkorNev => Enum.GetName(typeof(Szerepkor), Szerepkor) ?? "Ismeretlen";
 
 

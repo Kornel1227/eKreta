@@ -6,28 +6,62 @@
     xmlns:local="clr-namespace:eKreta.UserControls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
     <StackPanel>
-        <DataGrid x:Name ="datagridfelhasznalok" 
-                  Width="1100" 
-                  Height="600" 
-                  AutoGenerateColumns="False" 
-                  CanUserAddRows="False" 
-                  CanUserDeleteRows="False"
-                  IsReadOnly="True"
-                  SelectionChanged="datagridfelhasznalok_SelectionChanged"
-                  >
+        <DataGrid
+            x:Name="datagridfelhasznalok"
+            Width="1100"
+            Height="600"
+            AutoGenerateColumns="False"
+            CanUserAddRows="False"
+            CanUserDeleteRows="False"
+            IsReadOnly="True"
+            SelectionChanged="datagridfelhasznalok_SelectionChanged">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
-                <DataGridTextColumn Header="Felhasználónév" Binding="{Binding FelhasznaloNev}"/>
-                <DataGridTextColumn Header="Teljesnév" Binding="{Binding TeljesNev}"/>
-                <DataGridTextColumn Header="Szerepkör id" Binding="{Binding Szerepkor}"/>
-                <DataGridTextColumn Header="Szerepkör név" Binding="{Binding SzerepkorNev}"/> 
-                
+                <DataGridTextColumn Binding="{Binding ID}" Header="ID" />
+                <DataGridTextColumn Binding="{Binding FelhasznaloNev}" Header="Felhasználónév" />
+                <DataGridTextColumn Binding="{Binding Jelszo}" Header="Jelszo" />
+                <DataGridTextColumn Binding="{Binding TeljesNev}" Header="Teljesnév" />
+                <DataGridTextColumn Binding="{Binding Szerepkor}" Header="Szerepkör id" />
+                <DataGridTextColumn Binding="{Binding SzerepkorNev}" Header="Szerepkör név" />
+
             </DataGrid.Columns>
 
         </DataGrid>
-        <WrapPanel>
-            <StackPanel >
-                
+        <WrapPanel Margin="130,10,130,0">
+            <StackPanel Width="300" Background="LightGray">
+                <TextBlock>Felhasználónév:</TextBlock>
+                <TextBox x:Name="felhasznalonevText" />
+                <TextBlock>Teljes név:</TextBlock>
+                <TextBox x:Name="teljesnevText" />
+                <TextBlock>Jelszó:</TextBlock>
+                <PasswordBox x:Name="jelszoText" />
+                <TextBlock>Szerepkör</TextBlock>
+                <ComboBox x:Name="szerepkorComboBox" />
+            </StackPanel>
+            <StackPanel>
+                <Button
+                    x:Name="mentesBtn"
+                    Width="200"
+                    Background="Green"
+                    Click="mentesBtn_Click"
+                    Content="Mentés"
+                    Foreground="White"
+                    Visibility="Visible" />
+                <Button
+                    x:Name="torlesBtn"
+                    Width="200"
+                    Background="Red"
+                    Click="torlesBtn_Click"
+                    Content="Törlés"
+                    Foreground="White"
+                    Visibility="Hidden" />
+                <Button
+                    x:Name="modBtn"
+                    Width="200"
+                    Background="Yellow"
+                    Click="modBtn_Click"
+                    Content="Módostás"
+                    Foreground="White"
+                    Visibility="Hidden" />
             </StackPanel>
         </WrapPanel>
     </StackPanel>

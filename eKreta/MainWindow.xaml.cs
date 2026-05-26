@@ -41,7 +41,7 @@ namespace eKreta
 
         }
 
-        private void teremMenu_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        private void termekMenu_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             feladatPanel.Children.Clear();
             feladatPanel.Children.Add(new UserControls.UserControlTermek());

@@ -34,7 +34,32 @@
             <TextBox
                 x:Name="loginUserTxt"
                 Grid.Row="1"
+                Width="250"
+                HorizontalAlignment="Left" />
+            <TextBlock
+                Grid.Row="2"
+                HorizontalAlignment="Left"
+                Text="Jelszó:" />
+            <PasswordBox
+                x:Name="loginPasswordText"
+                Grid.Row="3"
+                Width="250"
                 HorizontalAlignment="Left" />
         </Grid>
+        <TextBlock
+            HorizontalAlignment="Right"
+            FontSize="14"
+            FontStyle="Italic"
+            Foreground="DarkBlue"
+            Text="Elfelejtett jelszó" />
+        <Button
+            x:Name="loginBtn"
+            Width="250"
+            Height="35"
+            Margin="0,50,0,0"
+            Background="Black"
+            Click="loginBtn_Click"
+            Content="Bejelentkezés"
+            Foreground="White" />
     </StackPanel>
 </Window>
